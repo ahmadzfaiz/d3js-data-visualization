@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG with D3js</title>
+  <style>
+    .anim-rect{
+      fill: red;
+      stroke: black;
+      stroke-width: 5;
+      transition: all 2000ms;
+    }
+
+    .anim-rect:hover{
+      fill: green;
+      stroke-width: 30;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Basic SVG</h1>
+    <svg width="800" height="800" class="mt-3">
+      <rect x="1" y="1" width="800" height="800" fill="cyan" stroke="green" stroke-width="20"></rect>
+      <circle cx="100" cy="100" r="50" fill="red"></circle>
+      <circle cx="200" cy="100" r="50" fill="blue"></circle>
+      <line x1="100" y1="100" x2="200" y2="200" stroke="navy" stroke-width="5"></line>
+      <path 
+        d="
+          M400,400 
+          L500,500 
+          L500,600
+          l-50,100
+          
+          M300,400
+          l-100,0
+          l-20,50
+          l0,150" 
+        stroke="purple" 
+        stroke-width="5" 
+        fill="pink">
+      </path>
+      <rect class="anim-rect" x="300" y="100" width="400" height="250"></rect>
+      <text x="50" y="750" font-size="30">Ahmad Zaenun Faiz</text>
+    </svg>
+  </div>
+  
+  <div>
+    <h1>Flag of Seychelles</h1>
+    <svg width="300" height="150">
+      <polygon points="0,0 0,150 100,0" fill="#003f87"></polygon>
+      <polygon points="100,0 0,150 200,0" fill="#FCD856"></polygon>
+      <polygon points="0,150 200,0 300,0 300,50" fill="#D62828"></polygon>
+      <polygon points="0,150 300,50 300,100" fill="#FFFFFF"></polygon>
+      <polygon points="0,150 300,100 300,150" fill="#007A3D"></polygon>
+    </svg>
+  </div>
+
+  <div>
+    <h1>Simple Vertical Bar Chart</h1>
+    <svg width="400" height="400">
+      <rect x="50" y="0" width="50" height="400" fill="blue"></rect>
+      <rect x="125" y="100" width="50" height="300" fill="red"></rect>
+      <rect x="200" y="200" width="50" height="200" fill="green"></rect>
+      <rect x="275" y="300" width="50" height="100" fill="orange"></rect>
+      <rect x="350" y="225" width="50" height="175" fill="purple"></rect>
+    </svg>
+  </div>
+
+  <div>
+    <h1>Simple Horizontal Bar Chart</h1>
+    <svg width="400" height="400">
+      <rect x="50" y="0" width="400" height="50" fill="blue"></rect>
+      <rect x="50" y="75" width="300" height="50" fill="red"></rect>
+      <rect x="50" y="150" width="200" height="50" fill="green"></rect>
+      <rect x="50" y="225" width="100" height="50" fill="orange"></rect>
+      <rect x="50" y="300" width="175" height="50" fill="purple"></rect>
+    </svg>
+  </div>
+
+  <div>
+    <h1>Simple Vertical Bar Chart with Label</h1>
+    <svg width="400" height="500">
+      <rect x="50" y="0" width="50" height="400" fill="blue"></rect>
+      <rect x="125" y="100" width="50" height="300" fill="red"></rect>
+      <rect x="200" y="200" width="50" height="200" fill="green"></rect>
+      <rect x="275" y="300" width="50" height="100" fill="orange"></rect>
+      <rect x="350" y="225" width="50" height="175" fill="purple"></rect>
+  
+      <text class="barchart-label" x="50" y="435" font-size="30">A</text>
+      <text class="barchart-label" x="125" y="435" font-size="30">B</text>
+      <text class="barchart-label" x="200" y="435" font-size="30">C</text>
+      <text class="barchart-label" x="275" y="435" font-size="30">D</text>
+      <text class="barchart-label" x="350" y="435" font-size="30">E</text>
+    </svg>
+  </div>
+
+  <div>
+    <h1>Pseudo Line Chart</h1>
+    <svg width="1000" height="500">
+      <path
+        d="
+          M50 450
+          L250 175
+          L400 325
+          L525 200
+          L650 300
+          L900 25"
+        stroke="black"
+        stroke-width="28"
+        stroke-linecap="round"
+        fill="none">
+      </path>
+    </svg>
+  </div>
+
+  <div>
+    <h1>Reference to visualize data</h1>
+    <ul>
+      <li><a href="https://ft-interactive.github.io/visual-vocabulary/" target="_blank">Visual Vocabulary</a></li>
+      <li><a href="https://www.data-to-viz.com/" target="_blank">Data to Viz</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h1>Create SVG using Vanilla JavaScript</h1>
+    <p>Using <a href="https://walkaboutny.com/2014/12/08/what-is-black-and-white-and-on-the-wall/">Sol LeWitt</a> arts as example</p>
+    <div id="basic-js-svg"></div>
+    <script src="./basicJsSvg.js" ></script>
+  </div>
+
+  <div>
+    <h1>Create SVG using D3js</h1>
+    <p>Using <a href="https://walkaboutny.com/2014/12/08/what-is-black-and-white-and-on-the-wall/">Sol LeWitt</a> arts as example</p>
+    <div id="basic-d3js-svg"></div>
+    <!-- Import D3js package -->
+    <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+    <script src="./basicD3jsSvg.js"></script>
+  </div>
+</body>
+</html>
